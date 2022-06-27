@@ -1,12 +1,15 @@
 import wollok.game.*
 import consola.*
+import menu.*
+import gameManager.*
 
 class Juego {
 	var property position = null
 	var property color 
 	
 	method iniciar(){
-        game.addVisual(object{method position()= game.center() method text() = "Juego "+color + " - <q> para salir"})		
+        mainMenu.iniciar()
+        juego.configure()	
 	}
 	
 	method terminar(){
