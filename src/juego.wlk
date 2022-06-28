@@ -8,8 +8,7 @@ class Juego {
 	var property color 
 	
 	method iniciar(){
-        mainMenu.iniciar()
-        juego.configure()	
+        mainMenu.iniciar()	
 	}
 	
 	method terminar(){
