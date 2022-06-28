@@ -6,6 +6,7 @@ import food.*
 class JuegoSnake {
 	const dificultad
 	method start() {
+		puntos.reiniciar()
 		game.title("Snake Game")
 		game.boardGround("fondo.png")
 		game.width(32)
@@ -24,6 +25,9 @@ class JuegoSnake {
 		
 		// Colisiones
 		game.onCollideDo(snake, {obstacle => obstacle.onCollide()})
+	}
+	
+	method terminar(){
 	}
 }
 
@@ -64,6 +68,10 @@ object sonido {
 object puntos {
 	
 	var cantidadPuntos = 0
+	
+	method reiniciar() {
+		cantidadPuntos = 0
+	}
 	
 	method position() = game.at(1,game.height()-3)
 	
