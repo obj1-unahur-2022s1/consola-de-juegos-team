@@ -16,7 +16,12 @@ object snake inherits GameObjectBase {
 	
 	method image() = "head" + direction.toString() + ".png"
 	
-	method initialize() {
+	method start() {
+		// Para la rejugabilidad
+		anterior = null
+		ultimaPosicion = position
+		ultimoSegmento = null
+		
 		keyboard.w().onPressDo({direction.setUp()})
 		keyboard.s().onPressDo({direction.setDown()})
 		keyboard.a().onPressDo({direction.setLeft()})

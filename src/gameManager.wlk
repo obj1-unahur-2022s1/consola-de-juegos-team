@@ -7,6 +7,7 @@ class JuegoSnake {
 	const dificultad
 	method start() {
 		puntos.reiniciar()
+		
 		game.title("Snake Game")
 		game.boardGround("fondo.png")
 		game.width(32)
@@ -21,7 +22,8 @@ class JuegoSnake {
 		game.addVisual(puntos)
 		
 		// Configurar snake
-		snake.dificultad(dificultad)
+		snake.start()
+		//snake.dificultad(dificultad)
 		
 		// Colisiones
 		game.onCollideDo(snake, {obstacle => obstacle.onCollide()})

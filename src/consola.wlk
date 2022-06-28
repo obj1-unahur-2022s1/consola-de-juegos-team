@@ -36,7 +36,7 @@ object consola {
 		juego.iniciar()
 	}
 	method hacerTerminar(juego){
-		juego.terminar()
+		if(juego != null) juego.terminar()
 		game.clear()
 		self.iniciar()
 	}
