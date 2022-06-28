@@ -11,10 +11,10 @@ object juego {
 	
 	method configure() {
 		game.title("Snake Game")
-		game.boardGround("fondo.png")
-		game.width(32)
-		game.height(32)
-		game.cellSize(16)
+//		game.boardGround("fondo.png")
+//		game.width(32)
+//		game.height(32)
+//		game.cellSize(16)
 		
 		// Visuales
 		game.addVisual(snake)

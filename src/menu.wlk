@@ -5,6 +5,7 @@ import gameManager.*
 object mainMenu {
 
 	method iniciar() {
+		
 		game.addVisual(fondoMenu)
 		game.addVisual(iniciarJuego)
 		game.addVisual(controles)
@@ -58,6 +59,7 @@ object iniciarJuego {
 		juego.configure()
 		snake.initialize()
 		sonido.setup()
+		
 	}
 	
 	method onColiide(){}
