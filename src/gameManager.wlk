@@ -1,28 +1,26 @@
 import wollok.game.*
 import snake.*
 import food.*
-import menu.*
 
 
-object juego {
-//	method start() {
-//		game.start()
-//	}
-	
-	method configure() {
+class JuegoSnake {
+	const dificultad
+	method start() {
 		game.title("Snake Game")
-//		game.boardGround("fondo.png")
-//		game.width(32)
-//		game.height(32)
-//		game.cellSize(16)
+		game.boardGround("fondo.png")
+		game.width(32)
+		game.height(32)
+		game.cellSize(16)
 		
 		// Visuales
 		game.addVisual(snake)
-		game.addVisual(new Food())
-		game.addVisual(new Insecto())
-		game.addVisual(new Rayo(position = game.at(0,0)))
+		game.addVisual(new Food(dificultad=dificultad))
+		game.addVisual(new Insecto(dificultad=dificultad))
+		game.addVisual(new Rayo(dificultad=dificultad))
 		game.addVisual(puntos)
 		
+		// Configurar snake
+		snake.dificultad(dificultad)
 		
 		// Colisiones
 		game.onCollideDo(snake, {obstacle => obstacle.onCollide()})

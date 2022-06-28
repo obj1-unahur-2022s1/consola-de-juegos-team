@@ -1,14 +1,14 @@
 import wollok.game.*
 import consola.*
-import menu.*
 import gameManager.*
 
 class Juego {
 	var property position = null
 	var property color 
+	const juego
 	
 	method iniciar(){
-        mainMenu.iniciar()	
+        juego.start()
 	}
 	
 	method terminar(){

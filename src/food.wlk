@@ -6,6 +6,7 @@ import gameObjects.*
 
 class Food inherits GameObjectBase {
 	var image =  ""
+	var dificultad
 	
 	method image() = image
 	
@@ -34,7 +35,7 @@ class Insecto inherits Food {
 	
 	override method initialize(){
 		super()
-		game.onTick(1000*0.5, "spiderLoop", {self.move()})
+		game.onTick(1000 / dificultad, "spiderLoop", {self.move()})
 	}
 	
 	method move(){
@@ -56,7 +57,7 @@ class Rayo inherits Food {
 	override method image() = "velocidad.png"
 	
 	override method onCollide() {
-		snake.establecerTick(55)
+		snake.establecerTick(100 / dificultad)
 		game.schedule(1000 * 4, { snake.establecerTick(100) })
 		self.setRandomPosition()
 	}
